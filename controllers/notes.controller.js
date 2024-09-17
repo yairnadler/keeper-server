@@ -1,5 +1,4 @@
 import { fetchNotesFromDB, newNoteInDB, deleteNoteFromDB } from "../models/utils.js";
-import { NotesModel } from "../models/Notes.js";
 
 export async function getAllNotes(req, res) {
   try {
@@ -25,7 +24,6 @@ export async function deleteNote(req, res){
         const noteID = req.params.id;
     try {
         const deletedNote = await deleteNoteFromDB(noteID); // Delete the user by ID
-    
         if (deletedNote) {
           res.json({ message: 'User deleted successfully', user: deletedNote });
         } else {

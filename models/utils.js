@@ -1,13 +1,10 @@
 import { NotesModel } from "./Notes.js";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 
-dotenv.config();
-const MONGODB_PASSWORD = process.env.MONGODB_PASSWORD;
 
-export default function connect(){
+export default function connect(mongoPassword){
   mongoose.connect(
-    `mongodb+srv://yairnadler7:${MONGODB_PASSWORD}@cluster0.s7myk.mongodb.net/keeper-app`
+    `mongodb+srv://yairnadler7:${mongoPassword}@cluster0.s7myk.mongodb.net/keeper-app`
   );
 }
 

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const NotesSchema = new mongoose.Schema({
-  _id: Number,
+  _id: String,
   title: String,
   content: String,
 });
